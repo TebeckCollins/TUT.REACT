@@ -1,3 +1,4 @@
+import './index.css'
 import Employee from "./components/Employee.jsx";
 import { useState } from "react";
 
@@ -6,7 +7,7 @@ function App() {
   const ShowEmployee = true;
 
   return (
-    <div className="App">
+    <div className="App bg-gray-200 pb-10 pt-10">
       {ShowEmployee ? (
         <>
           <span>Enter your Position: </span>
@@ -15,7 +16,12 @@ function App() {
             placeholder="Enter Position"
             onChange={(e) => setPosition(e.target.value)}
           />
-          <Employee name="John Doe" position={position} />
+          <div className="flex flex-wrap">
+            <Employee name="John Doe" position={position} />
+            <Employee name="John Doe" position={position} />
+            <Employee name="John Doe" position={position} />
+            <Employee name="John Doe" position={position} />
+          </div>
         </>
       ) : (
         <p>Employee component is not shown</p>
